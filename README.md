@@ -1,11 +1,13 @@
 This is a simple plugin that highlights operator characters for every language.
 I want characters like `+,-,/,*,.,:,=` etc. highlighted in every programming
-language I write, so I wrote this simple script.
+language I write, so I (Val Markovic) wrote this simple script.
 
-The default color for operator highlighting is cyan, but this can be changed by
-setting a different value to the `g:ophigh_color` variable. For instance, adding
-`let g:ophigh_color = "#F6FF00"` to your `vimrc` will highlight all operators
-with a bright yellow color.
+Set the highlight color of the operators using `OperatorChars`
+
+_Example:_
+```
+  highlight OperatorChars ctermfg=red guifg=red 
+```
 
 You can also configure the plugin to ignore certain filetypes and thus not
 highlight operators in them. This is done by adding a new key to the

@@ -24,10 +24,6 @@ else
   let g:loaded_operator_highlight = 1
 endif
 
-if !exists( 'g:ophigh_color' )
-  let g:ophigh_color = "cyan"
-endif
-
 if !exists( 'g:ophigh_filetypes_to_ignore' )
   let g:ophigh_filetypes_to_ignore = {}
 endif
@@ -61,7 +57,6 @@ fun! s:HighlightOperators()
   " basically, searching for "/" is more complex since we want to avoid
   " matching against "//" or "/*" which would break C++ comment highlighting
   syntax match OperatorChars "?\|+\|-\|\*\|;\|:\|,\|<\|>\|&\||\|!\|\~\|%\|=\|)\|(\|{\|}\|\.\|\[\|\]\|/\(/\|*\)\@!"
-  exec "hi OperatorChars guifg=" . g:ophigh_color . " gui=NONE"
 endfunction
 
 au Syntax * call s:HighlightOperators()
